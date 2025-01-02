@@ -108,10 +108,8 @@ export async function action({request}) {
   if(Object.keys(errors).length > 0) return errors
 
   // If everything is okay, create new order and redirect
-  // const newOrder = await createOrder(order)
-  // return redirect(`/order/${newOrder.id}`)
-
-  return null
+  const newOrder = await createOrder(order)
+  return redirect(`/order/${newOrder.id}`)
 }
 
 export default CreateOrder;
